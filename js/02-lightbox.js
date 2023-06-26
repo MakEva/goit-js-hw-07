@@ -16,20 +16,23 @@ function createItemMarkup(arr) {
     </li>`
     }).join("")
 }
-
-function imgOpenModal(evt) {
-    evt.preventDefault();
-    let gallery = new SimpleLightbox(".gallery a",
+let gallery = new SimpleLightbox(".gallery a",
         {   captionsData: "alt",
             captionPosition: 'bottom',
             captionDelay: 250
         });
     gallery.on('show.simplelightbox', () => createModal());
+
+function imgOpenModal(evt) {
+    evt.preventDefault();
 }
     
 function createModal({ original, description } = {}) {
-     return `<div>
+    return `<div>
              <img src="${original}" alt="${description}"/>
-          </div>` 
+          </div>`;
 }
+
+
+
 

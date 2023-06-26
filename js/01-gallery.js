@@ -28,13 +28,14 @@ function imgOpenModal(evt) {
           const instance = basicLightbox.create(createModal(obj));
             instance.show();
             document.addEventListener("keydown", hendlerEscKey);
-           
+                       
             function hendlerEscKey(e) {
                 if (e.code === "Escape") {
                     instance.close();
                 }
             }
-    }
+        }
+    document.removeEventListener("keydown", hendlerEscKey);
 }
 
 function findCurrentImg(cardItem) {
