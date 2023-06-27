@@ -32,10 +32,11 @@ function imgOpenModal(evt) {
             function hendlerEscKey(e) {
                 if (e.code === "Escape") {
                     instance.close();
+                     document.removeEventListener("keydown", hendlerEscKey);
                 }
             }
         }
-    document.removeEventListener("keydown", hendlerEscKey);
+   
 }
 
 function findCurrentImg(cardItem) {
